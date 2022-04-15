@@ -9,10 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // 画像の配列と配列番号の変数
     let pics = ["Image-1", "Image-2", "Image-3"]
     var picsnum = 0
-
     
+    // タイマーとタイマー用の時間のための変数
+    var timer: Timer!
+    
+
+    // イメージビュー
     @IBOutlet weak var imagepic: UIImageView!
     
     // 進むボタンをタップして次の画像を表示する
@@ -33,7 +38,7 @@ class ViewController: UIViewController {
         }
     }
     
-    //戻るボタンをタップして前の画像を表示する
+    // 戻るボタンをタップして前の画像を表示する
     @IBAction func backButton(_ sender: Any) {
         if pics[picsnum] == pics.first {
             
@@ -51,7 +56,60 @@ class ViewController: UIViewController {
         }
     }
     
+    // 再生停止ボタン
+    @IBOutlet weak var startstopButtonImage: UIButton!
+    // 進むボタン
+    @IBOutlet weak var nextButtonImage: UIButton!
+    // 戻るボタン
+    @IBOutlet weak var backButtonImage: UIButton!
     
+    
+    // 再生ボタンをタップすると自動送りが始まり、2秒毎にスライドさせる
+    @IBAction func startstopButton(_ sender: Any) {
+        if (timer == nil) {
+            // タイマーをセットする
+            timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
+            
+            // ボタンのアイコン表示を停止に変える
+            let picture = UIImage(systemName: "stop") //停止の画像表示
+            startstopButtonImage.setImage(picture, for: .normal)
+            
+            // 進むボタンと戻るボタンをタップ不可にする
+            nextButtonImage.isEnabled = false
+            backButtonImage.isEnabled = false
+            
+        } else {
+            timer.invalidate()
+            
+            timer = nil
+            
+            // ボタンのアイコン表示を再生に変える
+            let picture = UIImage(systemName: "play") //再生の画像表示
+            startstopButtonImage.setImage(picture, for: .normal)
+            
+            // 進むボタンと戻るボタンをタップ可にする
+            nextButtonImage.isEnabled = true
+            backButtonImage.isEnabled = true
+        }
+    }
+    
+    
+    @objc func changeImage() {
+        if pics[picsnum] == pics.last {
+            
+            picsnum = 0
+            
+            let name = pics[picsnum]
+            imagepic.image = UIImage(named: name)
+            
+        } else {
+            
+            picsnum += 1
+            
+            let name = pics[picsnum]
+            imagepic.image = UIImage(named: name)
+        }
+    }
     
     
     override func viewDidLoad() {

@@ -25,6 +25,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="play" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="startstopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P4l-Dq-MRq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbz-yd-lpy">
                                 <rect key="frame" x="91" y="628" width="50" height="31"/>
@@ -51,7 +54,10 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="backButtonImage" destination="cbz-yd-lpy" id="6qs-8I-gOW"/>
                         <outlet property="imagepic" destination="BZh-vq-HT5" id="j6f-iO-Stn"/>
+                        <outlet property="nextButtonImage" destination="S9C-QU-h21" id="TeV-SI-SNQ"/>
+                        <outlet property="startstopButtonImage" destination="R7I-Cs-sV2" id="EvV-gH-N3n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
