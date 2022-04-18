@@ -112,6 +112,29 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+    }
+    
+    @IBAction func tapAction(_ sender: Any) {
+        
+        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            let enlargedImageViewController:EnlargedImageViewController = segue.destination as! EnlargedImageViewController
+            
+            let name = pics[picsnum]
+            
+            print(name)
+            
+            imagepic.image = UIImage(named: name)
+            enlargedImageViewController.x = imagepic.image
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

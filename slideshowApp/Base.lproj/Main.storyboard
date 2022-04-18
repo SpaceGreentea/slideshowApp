@@ -16,9 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="BZh-vq-HT5">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="BZh-vq-HT5">
                                 <rect key="frame" x="82" y="200" width="250" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5A0-vf-Ub1" appends="YES" id="u8K-F4-N4P"/>
+                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7I-Cs-sV2">
                                 <rect key="frame" x="188" y="628" width="39" height="31"/>
@@ -61,23 +65,52 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="5A0-vf-Ub1">
+                    <connections>
+                        <action selector="tapAction:" destination="BYZ-38-t0r" id="g8s-oi-tr0"/>
+                        <segue destination="2C7-B2-IYX" kind="show" id="Rgi-Zj-peO"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-23" y="95"/>
         </scene>
-        <!--View Controller-->
+        <!--Enlarged Image View Controller-->
         <scene sceneID="tOS-KN-BJQ">
             <objects>
-                <viewController id="2C7-B2-IYX" sceneMemberID="viewController">
+                <viewController id="2C7-B2-IYX" customClass="EnlargedImageViewController" customModule="slideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="teQ-Hd-SZK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sSg-x9-tYQ">
+                                <rect key="frame" x="0.0" y="223" width="414" height="513"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fbD-WR-OLS">
+                                <rect key="frame" x="-9" y="82" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="戻る" id="WZB-bp-9go">
+                                        <connections>
+                                            <segue destination="xfO-sp-UuV" kind="unwind" unwindAction="unwind:" id="I0E-6U-iaf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="nes-eK-fMf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="lXv-zm-q7C"/>
+                    <connections>
+                        <outlet property="backscreen" destination="WZB-bp-9go" id="ryH-KP-WA3"/>
+                        <outlet property="resultImage" destination="sSg-x9-tYQ" id="7ot-ud-1MR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6SF-Do-grK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="xfO-sp-UuV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="651" y="94"/>
+            <point key="canvasLocation" x="650.72463768115949" y="93.750000000000014"/>
         </scene>
     </scenes>
     <resources>
