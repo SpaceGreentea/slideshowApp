@@ -111,27 +111,40 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    // ２つ目の画面の戻るをタップした時に、1つ目の画面に戻りタイマーを再始動させる
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
+        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
     }
     
-    @IBAction func tapAction(_ sender: Any) {
+//    @IBAction func tapAction(_ sender: Any) {
+//
+//        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            let enlargedImageViewController:EnlargedImageViewController = segue.destination as! EnlargedImageViewController
+            
+//            let name = pics[picsnum]
+            
+//            print(name)
+            
+//            imagepic.image = UIImage(named: name)
+//            enlargedImageViewController.x = imagepic.image
+//        }
         
-        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            let enlargedImageViewController:EnlargedImageViewController = segue.destination as! EnlargedImageViewController
-            
-            let name = pics[picsnum]
-            
-            print(name)
-            
-            imagepic.image = UIImage(named: name)
-            enlargedImageViewController.x = imagepic.image
-        }
+//    }
+    
+    // 1つ目の画像をタップした時に2つ目の画面を表示させる
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let enlargedImageViewController:EnlargedImageViewController = segue.destination as! EnlargedImageViewController
+                
+        let name = pics[picsnum]
+                
+        imagepic.image = UIImage(named: name)
+        enlargedImageViewController.x = imagepic.image
         
+        // タイマーを止める
+        timer.invalidate()
+        timer = nil
+    
     }
-    
-    
-    
     
     
     
