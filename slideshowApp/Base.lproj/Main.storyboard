@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="BZh-vq-HT5">
-                                <rect key="frame" x="82" y="200" width="250" height="350"/>
+                                <rect key="frame" x="97" y="169.66666666666666" width="220" height="396.66666666666674"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -25,7 +25,7 @@
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7I-Cs-sV2">
-                                <rect key="frame" x="188" y="628" width="39" height="31"/>
+                                <rect key="frame" x="187.66666666666666" y="616.33333333333337" width="39" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="play" catalog="system" title=""/>
@@ -34,7 +34,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbz-yd-lpy">
-                                <rect key="frame" x="91" y="628" width="50" height="31"/>
+                                <rect key="frame" x="87.666666666666671" y="616.33333333333337" width="50.000000000000014" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="backward" catalog="system" title=""/>
@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9C-QU-h21">
-                                <rect key="frame" x="274" y="628" width="50" height="31"/>
+                                <rect key="frame" x="276.66666666666669" y="616.33333333333337" width="50" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="forward" catalog="system" title=""/>
@@ -82,13 +82,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sSg-x9-tYQ">
-                                <rect key="frame" x="0.0" y="223" width="414" height="513"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fbD-WR-OLS">
-                                <rect key="frame" x="-9" y="82" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbD-WR-OLS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
                                     <barButtonItem title="戻る" id="WZB-bp-9go">
                                         <connections>
@@ -97,9 +92,21 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sSg-x9-tYQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nes-eK-fMf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sSg-x9-tYQ" firstAttribute="trailing" secondItem="nes-eK-fMf" secondAttribute="trailing" id="8fS-vT-Lb9"/>
+                            <constraint firstAttribute="bottom" secondItem="sSg-x9-tYQ" secondAttribute="bottom" id="Asw-Ww-SQn"/>
+                            <constraint firstItem="sSg-x9-tYQ" firstAttribute="top" secondItem="fbD-WR-OLS" secondAttribute="bottom" id="UgU-9R-Ydd"/>
+                            <constraint firstItem="fbD-WR-OLS" firstAttribute="top" secondItem="nes-eK-fMf" secondAttribute="top" id="feK-J6-yK8"/>
+                            <constraint firstItem="fbD-WR-OLS" firstAttribute="trailing" secondItem="nes-eK-fMf" secondAttribute="trailing" id="iU9-4J-2bO"/>
+                            <constraint firstItem="fbD-WR-OLS" firstAttribute="leading" secondItem="nes-eK-fMf" secondAttribute="leading" id="ni0-N0-kUV"/>
+                            <constraint firstItem="sSg-x9-tYQ" firstAttribute="leading" secondItem="nes-eK-fMf" secondAttribute="leading" id="w0B-mv-ndA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lXv-zm-q7C"/>
                     <connections>
