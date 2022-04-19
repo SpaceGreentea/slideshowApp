@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="BZh-vq-HT5">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="BZh-vq-HT5">
                                 <rect key="frame" x="97" y="170" width="220" height="396"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -128,9 +128,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image-1" width="220" height="396.66665649414062"/>
         <image name="backward" catalog="system" width="128" height="79"/>
         <image name="forward" catalog="system" width="128" height="79"/>
+        <image name="image1.jpeg" width="1438" height="2592"/>
         <image name="play" catalog="system" width="120" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

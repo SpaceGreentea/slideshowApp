@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     // 画像の配列と配列番号の変数
-    let pics = ["Image-1", "Image-2", "Image-3"]
+    let pics = ["image1.jpeg", "image2.jpeg", "image3.jpeg"]
     var picsnum = 0
     
     // タイマーとタイマー用の時間のための変数
