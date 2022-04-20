@@ -111,31 +111,22 @@ class ViewController: UIViewController {
         }
     }
     
-    // ２つ目の画面の戻るをタップした時に、再生した状態でタップした場合、1つ目の画面に戻りタイマーを再始動させる
+     // ２つ目の画面の戻るをタップした時に、再生した状態でタップした場合、1つ目の画面に戻りタイマーを再始動させる
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
         if (nextButtonImage.isEnabled == false) {
             timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
         }
     }
     
-//    @IBAction func tapAction(_ sender: Any) {
-//
-//        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//            let enlargedImageViewController:EnlargedImageViewController = segue.destination as! EnlargedImageViewController
-            
-//            let name = pics[picsnum]
-            
-//            print(name)
-            
-//            imagepic.image = UIImage(named: name)
-//            enlargedImageViewController.x = imagepic.image
-//        }
-        
-//    }
     
     // 1つ目の画像をタップした時に2つ目の画面を表示させる
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let enlargedImageViewController:EnlargedImageViewController = segue.destination as! EnlargedImageViewController
+        
+        
+        // ? これなのか
+        enlargedImageViewController.presentationController?.delegate = self
+        
         
         // 再生ボタンを押していない状態で画像をタップした場合、タイマーには何もしない
         if (timer == nil) {
@@ -162,9 +153,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+
     }
 
-    
-    
 }
+
+    //? これなのか　2つ目の画面でモーダル画面を下にスライドさせた時に、タイマーを再生した状態であれば、タイマーを再始動させる
+        extension ViewController: UIAdaptivePresentationControllerDelegate {
+            func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+                if (nextButtonImage.isEnabled == false) {
+                    timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
+                }
+            }
+}
+    
 

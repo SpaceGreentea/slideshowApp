@@ -7,6 +7,19 @@
 
 import UIKit
 
+
+// ?これなのか
+extension EnlargedImageViewController {
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        super.dismiss(animated: flag, completion: completion)
+        guard let presentationController = presentationController else {
+            return
+        }
+        presentationController.delegate?.presentationControllerDidDismiss?(presentationController)
+    }
+}
+
+
 class EnlargedImageViewController: UIViewController {
     
     @IBOutlet weak var resultImage: UIImageView!
